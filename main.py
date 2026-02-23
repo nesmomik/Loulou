@@ -8,7 +8,7 @@ from collections import Counter, OrderedDict
 from typing import List, Dict, Any
 
 # third party libraries
-# import mistune
+import mistune
 
 # local modules 
 from src.setup_site import *
@@ -119,3 +119,4 @@ if __name__ == "__main__":
     createNavigation()
 
     createContent()
+
