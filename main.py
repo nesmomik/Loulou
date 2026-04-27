@@ -25,7 +25,7 @@ CONFIG_FILE: str = "config.json"
 NOW: str = datetime.now().strftime("%Y%m%d")
 ROOT_DIR: str = os.getcwd()
 OUTPUT_DIR: str = os.path.join(ROOT_DIR,"build")
-DATA_DIR: str = os.path.join(ROOT_DIR,"data",NOW)
+DATA_DIR: str = os.path.join(ROOT_DIR,"data")
 POSTS_DIR: str = os.path.join(ROOT_DIR,"posts")
 TEMPLATES_DIR: str = os.path.join(ROOT_DIR,"templates")
 OUTPUT_FOLDERS: List[str] = [
@@ -43,7 +43,11 @@ json_file: str = os.path.join(DATA_DIR,"posts.json")
 
 # Wrapper functions
 def setupSite() -> None:
-    createDataFolder(DATA_DIR)
+    createFolders(
+        OUTPUT_DIR,
+        DATA_DIR,
+        NOW
+    )
     clearOutputFolder(OUTPUT_DIR)
     createOutputFolders(
         OUTPUT_DIR,

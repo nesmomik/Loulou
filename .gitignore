@@ -1,0 +1,10 @@
+# content directories
+build/*
+data/*
+posts/*
+images/*
+!images/.gitkeep
+
+# byte-compiled
+__pycache__/
+
