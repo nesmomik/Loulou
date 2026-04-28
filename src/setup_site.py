@@ -8,13 +8,18 @@ def getConfigFile(file_to_open: str) -> Dict:
         config: Dict = json.load(config_file)
     return config
 
-def createDataFolder(path_to_folder: str) -> None:
-    if not os.path.exists(path_to_folder):
-        os.mkdir(path_to_folder)
+def createFolders(path_to_build_folder: str, path_to_data_folder: str, current_date: str) -> None:
+    if not os.path.exists(path_to_build_folder):
+        os.mkdir(path_to_build_folder)
+    if not os.path.exists(path_to_data_folder):
+        os.mkdir(path_to_data_folder)
+    path_to_current_folder = os.path.join(path_to_data_folder,current_date)
+    if not os.path.exists(path_to_current_folder):
+        os.mkdir(path_to_current_folder)
 
 def clearOutputFolder(path_to_folder: str) -> None:
     for folder_or_file in os.listdir(path_to_folder):
-        path = os.path.join(path_to_folder, folder_or_file)
+        path = os.path.join(path_to_folder,folder_or_file)
         if os.path.isfile(path):
             os.remove(path)
         else:
