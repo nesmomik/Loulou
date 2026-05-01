@@ -46,3 +46,15 @@ def createMainTemplate(path_to_input_file: str, path_to_output_file: str, config
         custom_file.write(template_string)
     return template_string
 
+
+def createJavaScript(js_file_location: str, target_folder: str, config_file) -> str:
+    with open(js_file_location,"r") as js_file:
+        template_string: str = js_file.read()
+    template_string = (
+        template_string
+       .replace("{{placeholder_github}}",config_file["social"]["gitHub"])
+       .replace("{{placeholder_linkedin}}",config_file["social"]["linkedIn"])
+    )
+    with open(os.path.join(target_folder, "javascript", "script.js"),"w") as custom_file:
+        custom_file.write(template_string)
+

@@ -13,7 +13,7 @@ import mistune
 # local modules 
 from src.setup_site import *
 from src.create_json import *
-from src.create_main import createMainTemplate
+from src.create_main import createMainTemplate, createJavaScript
 from src.create_about import createAbout
 from src.create_extras import createExtras
 from src.create_home import createHome
@@ -22,6 +22,7 @@ from src.create_individualposts import createIndividualPosts
 
 # Constants
 CONFIG_FILE: str = "config.json"
+JS_FILE: str = "javascript/script.js"
 ROOT_DIR: str = os.getcwd()
 OUTPUT_DIR: str = os.path.join(ROOT_DIR,"build")
 DATA_DIR: str = os.path.join(ROOT_DIR,"data")
@@ -75,6 +76,11 @@ def createJSON() -> None:
     )
 
 def createPages() -> None:
+    createJavaScript(
+        JS_FILE,
+        OUTPUT_DIR,
+        config_file
+    )
     createMainTemplate(
         ROOT_DIR,
         DATA_DIR,
