@@ -1,10 +1,10 @@
 {
     "main": {
-        "url" : "https://blanchardjulien.com",
-        "title" : "Julien's Data Blog",
-        "subtitle" : "All things data | Programming",
-        "author" : "Julien Blanchard",
-        "profilePicture" : "juju.jpeg"
+        "url" : "https://michaelthomsen.de",
+        "title" : "Michael's Portfolio Blog",
+        "subtitle" : "All things DevOps | Programming",
+        "author" : "Michael Thomsen",
+        "profilePicture" : "micha.jpg"
     },
     "custom": {
         "numRecentArticles": 8,
@@ -20,46 +20,41 @@
         "about" : "About"
     },
     "social": {
-        "gitHub" : "https://github.com/julien-blanchard/",
-        "linkedIn" : "https://www.linkedin.com/in/julien-blanchard-4b539038/"
+        "gitHub" : "https://github.com/nesmomik/",
+        "linkedIn" : "https://www.linkedin.com/in/michaelthomsen-de/"
     },
     "css": [
         "bulma.min.css",
-        "solar_bulmaswatch.min.css",
+        "slate_bulmaswatch.min.css",
         "highlight_tokyonightdark.css",
         "fonts.css",
         "style.css"
     ],
     "js": [
         {
-            "url": "https://kit.fontawesome.com/35ee8b8fd7.js",
+            "url": "https://kit.fontawesome.com/c74b1472ec.js",
             "options": { 
                 "crossorigin": "anonymous"
             }
         },
         {
-            "url": "https://blanchardjulien.com/javascript/highlight.min.js",
+            "url": "https://michaelthomsen.de/javascript/highlight.min.js",
             "options": {}
         },
         {
             "url": "https://cloud.umami.is/script.js",
             "options":
             {
-                "data-website-id": "8c8334c9-9aff-41a9-a7f8-402d01529b18",
+                "data-host-url": "https://cloud.umami.is",
+                "data-website-id": "18a3c58a-03a0-465e-89e8-dbb23b3d23d4",
                 "defer": true
             }
         },
         {
-            "url": "https://cdn.counter.dev/script.js",
-            "options":
-            {
-                "data-id": "205ad799-38b0-4d9a-ac65-2fdf615ff871",
-                "data-utcoffset": "0" 
+            "url": "https://michaelthomsen.de/javascript/script.js",
+            "options": {
+                "defer": true
             }
-        },
-        {
-            "url": "https://blanchardjulien.com/javascript/script.js",
-            "options": {}
         }
     ]
 }
