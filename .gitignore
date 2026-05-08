@@ -8,3 +8,6 @@ images/*
 # byte-compiled
 __pycache__/
 
+# deployment
+deploy.sh
+
