@@ -13,12 +13,10 @@ import mistune
 # local modules 
 from src.setup_site import *
 from src.create_json import *
-from src.create_main import createMainTemplate, createJavaScript
-from src.create_about import createAbout
-from src.create_extras import createExtras
-from src.create_home import createHome
-from src.create_postspage import createPostsPage
-from src.create_individualposts import createIndividualPosts
+from src.create_base import createBaseTemplate, createJavaScript
+from src.create_pages import *
+from src.create_posts import createPosts
+
 
 # Constants
 CONFIG_FILE: str = "config.json"
@@ -81,7 +79,7 @@ def createPages() -> None:
         OUTPUT_DIR,
         config_file
     )
-    createMainTemplate(
+    createBaseTemplate(
         ROOT_DIR,
         DATA_DIR,
         config_file
@@ -104,7 +102,15 @@ def createPages() -> None:
         TEMPLATES_DIR,
         OUTPUT_DIR
     )
-    createPostsPage(
+    createArticlesPage(
+        json_file,
+        7,
+        config_file["main"]["url"],
+        DATA_DIR,
+        TEMPLATES_DIR,
+        OUTPUT_DIR
+    )
+    createProjectsPage(
         json_file,
         7,
         config_file["main"]["url"],
@@ -114,7 +120,7 @@ def createPages() -> None:
     )
 
 def createContent() -> None:
-    createIndividualPosts(
+    createPosts(
         json_file,
         DATA_DIR,
         TEMPLATES_DIR,

@@ -4,6 +4,7 @@ from typing import List, Dict, Any
 import mistune
     
 def createPost(post_path: str, templates: List[str], output_dir: str, attributes: List[str], config_file: Dict) -> None:
+    """ takes the markdown files and the templates , creates the html and writes the file """
     with open(post_path,"r") as temp_file:
         temp_post: str = temp_file.read()
     
@@ -32,7 +33,8 @@ def createPost(post_path: str, templates: List[str], output_dir: str, attributes
     with open(path_to_post,"w") as temp_file:
         temp_file.write(full_post)
 
-def createIndividualPosts(json_path: str, html_template: str,template_folder: str, posts_folder: str, output_dir: str, config_file: Dict) -> None:
+def createPosts(json_path: str, html_template: str,template_folder: str, posts_folder: str, output_dir: str, config_file: Dict) -> None:
+    """ loops over the posts in the json_file and calls createPost to create html"""
     with open(os.path.join(html_template,"custom_main.html"), "r") as template_file:
         main_html: str = template_file.read()
     with open(os.path.join(template_folder,"template_individual_post.html"), "r") as template_file:

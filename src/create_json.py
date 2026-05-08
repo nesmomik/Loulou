@@ -4,6 +4,7 @@ from typing import List, Dict, Any
 from collections import OrderedDict
 
 def getListOfPosts(path_to_files: str) -> List[str]:
+    """ creates a list of file paths to the post files in the posts directory """
     result: List[str] = []
     for files in os.listdir(path_to_files):
         if files.endswith(".md"):
@@ -12,6 +13,12 @@ def getListOfPosts(path_to_files: str) -> List[str]:
     return result
 
 def createPostsJSON(list_of_posts: List[str], path_to_json: str) -> Dict:
+    """ 
+    creates a dictionary of the post metadata
+    saves title and config, NO CONTENT
+    saves dict to a json file
+    return value not used
+    """
     temp_container: List[str] = []
     for posts in list_of_posts:
         with open(posts, "r", encoding="utf8") as post_file:
@@ -25,7 +32,6 @@ def createPostsJSON(list_of_posts: List[str], path_to_json: str) -> Dict:
     temp_container = "{" + temp_container + "}"
     unsorted_result: Dict = json.loads(temp_container)
     result = OrderedDict(reversed(sorted(unsorted_result.items())))
-
     json_file_name: str = os.path.join(path_to_json,"posts.json")
     with open(json_file_name,"w", encoding="utf8") as json_file:
         json.dump(result,json_file)

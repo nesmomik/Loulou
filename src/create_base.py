@@ -1,8 +1,8 @@
 import os
 from datetime import datetime
 
-def createMainTemplate(path_to_input_file: str, path_to_output_file: str, config_file) -> str:
-    template_file_location: str = os.path.join(path_to_input_file,"templates","template_main.html")
+def createBaseTemplate(path_to_input_file: str, path_to_output_file: str, config_file) -> str:
+    template_file_location: str = os.path.join(path_to_input_file,"templates","template_base.html")
     with open(template_file_location,"r") as template_file:
         template_string: str = template_file.read()
     template_string = (

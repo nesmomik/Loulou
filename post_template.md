@@ -1,10 +1,11 @@
 -----
 {
-"title":"",
+"title":"template",
 "date":"",
 "summary":"",
 "tags":["",""],
 "featured":false,
-"readTime":""
+"readTime":"",
+"type":""
 }
 -----
